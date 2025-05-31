@@ -3,6 +3,8 @@ from streamlit_lightweight_charts import renderLightweightCharts
 import numpy as np
 from datetime import datetime, timedelta
 
+st.set_page_config(layout="wide")
+
 # --- Synthetic data generator ---
 def generate_path(S0, num_points, r, t_step, V, rand, rand_trend, mean, mean_reversion):
     S = S0 * np.ones(num_points)

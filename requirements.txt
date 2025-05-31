@@ -1,0 +1,3 @@
+streamlit
+streamlit_lightweight_charts
+numpy
