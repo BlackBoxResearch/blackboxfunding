@@ -101,24 +101,55 @@ st.title("Welcome, Ben", anchor=False)
 st.caption("Last login 10/05/25 00:31")
 st.divider()
 
+with st.container(border=False):
+    st.markdown("**Chart 1 – Synthetic Data**")
+    renderLightweightCharts([
+        {
+            "chart": chartOptions,
+            "series": create_series(data1),
+        }
+    ], 'data_plot')
+
 col1, col2 = st.columns(2)
 
 with col1:
     with st.container(border=False):
-        st.markdown("**Chart 1 – Synthetic Feed A**")
+        st.markdown("**Strategy Profit vs. Alpha**")
         renderLightweightCharts([
             {
                 "chart": chartOptions,
                 "series": create_series(data1),
             }
-        ], 'area1')
+        ], 'alpha_plot')
 
 with col2:
     with st.container(border=False):
-        st.markdown("**Chart 2 – Synthetic Feed B**")
+        st.markdown("**Strategy Profit vs. Threshold**")
         renderLightweightCharts([
             {
                 "chart": chartOptions,
                 "series": create_series(data2),
             }
-        ], 'area2')
+        ], 'threshold_plot')
+
+col3, col4 = st.columns(2)
+
+with col3:
+    with st.container(border=False):
+        st.markdown("**Strategy Profit vs. Short Days**")
+        renderLightweightCharts([
+            {
+                "chart": chartOptions,
+                "series": create_series(data1),
+            }
+        ], 'short_days_plot')
+
+with col4:
+    with st.container(border=False):
+        st.markdown("**Strategy Profit vs. Long Days**")
+        renderLightweightCharts([
+            {
+                "chart": chartOptions,
+                "series": create_series(data2),
+            }
+        ], 'long_days_plot')
